@@ -10,13 +10,11 @@ def bin_search(sku_list, sku):
     bottom = 0
     top = len(sku_list) - 1
     found = False
-    location = -1
     location_first = 0
     location_last = 0
     while (bottom <= top) and not (found):
         middle = int((bottom + top) // 2)
         if (sku_list[middle][:10] == sku):
-            location = middle
             found = True
             for I in range(location, len(sku_list)):
                 if not sku_list[I][:10] == sku:
