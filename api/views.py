@@ -14,10 +14,6 @@ async def csv(request):
     location = bin_search(sku_list, sku)
     result = sku_list[location[0]:location[1] + 1]
     if min_rank:
-        # for i in range(0, len(result)):
-        #     line = result[i].split(',')
-        #     if float(line[2]) < float(min_rank):
-        #         result.pop(i)
         result = [r for r in result if float(r.split(',')[2]) > float(min_rank)]
 
     return aiohttp.web.Response(text=json.dumps(result), status=200)
