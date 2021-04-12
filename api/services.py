@@ -29,5 +29,4 @@ def bin_search(sku_list, sku):
                 top = middle - 1
             else:
                 bottom = middle + 1
-    loc = [location_first, location_last]
-    return loc
+    return sku_list[location_first:location_last + 1]
